@@ -308,7 +308,7 @@ MPCF starts off by advertising via `MCNearbyServiceAdvertiser` the types of sess
 
 I haven't run an experiment to see what the maximum size of a MPCF announcement is but given that info tops out at 400 bytes it would be reasonable to assume that peerID and service type are both smaller in size than that. The point then being that the announcement mechanism is not the best way to discover the full beacon string which can easily be 1K or more.
 
-Therefore we will only use the MPCF announcement to identify ourselves as a Thali node and then use our TCP/IP binding for further communication in order to retrieve things like notification beacons via the [HTTP endpoint](Transferring-discovery-beacon-values-over-HTTP).
+Therefore we will only use the MPCF announcement to identify ourselves as a Thali node and then use our TCP/IP binding for further communication in order to retrieve things like notification beacons via the [HTTP endpoint](#Transferring-discovery-beacon-values-over-HTTP).
 
 __Note:__ We have runs tests that show that if `MCNearbyServiceAdvertiser` is turned off and then back on with a different `peerID`  this will not affect any preexisting sessions.
 
@@ -350,13 +350,15 @@ The MCPeerID submitted in myPeerID MUST follow the syntax given in the EBNF belo
 ```
 MCPeerID = UUID ':' Generation
 ; UUID is defined in [RFC 4122](https://tools.ietf.org/html/rfc4122)
-Generation = 1*HexidecimalDigit
-HexidecimalDigit = 0-9 / A-F
+Generation = 1*HexadecimalDigit
+HexadecimalDigit = 0-9 / A-F
 ```
 
-Whenever a Thali app is told to start advertising it MUST generate a new UUID for its MCPeerID (and this UUID MUST be generated separately from the UUID used with the service browser to make sure that the two UUIDs are different, this prevents state issues with having multiple MCSessions between the same two peers). It MUST also start its generation counter at 0. If the peer wishes to notify the peers around it that it has a new value but if it wishes to do so without hiding all of its identity then what it can do is start a new MCNearbyServiceAdvertiser object with a new MCPeerID that consists of the same UUID as the previous MCNearbyServiceAdvertiser but with the generation incremented by 1. Note that the generation value MUST be a string encoding a hexidecimal representation of the counter. This will let remote peers recognize that this is the same peer they have seen before but with new data. This trick is used to make it easier for peers to preferentially look for data from known remote peers.
+Whenever a Thali app is told to start advertising it MUST generate a new UUID for its MCPeerID (and this UUID MUST be generated separately from the UUID used with the service browser to make sure that the two UUIDs are different, this prevents state issues with having multiple MCSessions between the same two peers). It MUST also start its generation counter at 0. If the peer wishes to notify the peers around it that it has a new value but is willing to make itself slightly more trackable then what it can do is start a new MCNearbyServiceAdvertiser object with a new MCPeerID that consists of the same UUID as the previous MCNearbyServiceAdvertiser but with the generation incremented by 1. Note that the generation value MUST be a string encoding a hexadecimal representation of the counter. This will let remote peers recognize that this is the same peer they have seen before but with new data. This trick is used to make it easier for peers to preferentially look for data from known remote peers.
 
 For example, imagine that phone A discovers phone B advertising itself with the MCPeerID [GUID 1]:0. Phone A connects, pulls down the beacons and disconnects. A little bit later Phone A sees an advertisement for [GUID 1]:1. Phone A now knows that this is the same Phone B but it now has new data. Depending on the priority that Phone A gives to Phone B it can decide to either immediately reconnect or even not connect since it has sync'd so recently and may wish to give other peers a chance.
+
+The downside to this approach is that in theory it makes it easier to track a phone. In the original design every time the phone has a new set of beacons it will generate a new MCPeerID. But with this modified proposal part of its MCPeerID, the UUID, would remain constant for some window of time (only the period when the app is in the foreground). This doesn't seem like a big deal in practice but it seems worth pointing out.
 
 In any case when a peer starts a new MCNearbyServiceAdvertiser object it MUST keep the old object around for at least 30 seconds. This is to allow any in progress invites to finish. After 30 seconds the old MCNearbyServiceAdvertiser objects MUST be closed.
 
