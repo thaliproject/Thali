@@ -85,9 +85,6 @@ We like to blog but most of us blog on our own blogs. But we would like to repub
 
 That's it. The article will automatically be picked up by our blog feed.
 
-## Twitter
-Just a note that we forward our blog articles to Twitter using [TwitterFeed](http://twitterfeed.com/).
-
 # Process!!!!
 We have daily standups where we review everyone's work in [HuBoard](https://huboard.com/thaliproject/thali/).The key columns are Working which is what you are doing right now. When we do stand up we will look there. We don't really distinguish between Ready and Backlog. Icebox however is only for issues that we just don't want to forget but have no commitment of any sort to actually do. Keep in mind that HuBoard creates issues by default in IceBox. When filing a bug PLEASE REMEMBER TO:
 
@@ -408,4 +405,3 @@ The downside to jxcore-android-basics is that it ships with the jx core binaries
 3. Get a coffee or a tea, maybe a magazine, that compile takes forever.
 4. Go to jxcore-droid/jni/Android.mk which contains a value JXCORE_OUT_ANDROID that I needed to point to the jxcore/out_android/android/bin/ sub-directory created in step 2.
 5. Now run android-ndk-r10d/ndk-build in the root of the Android project we want to use JXCore in.
-
