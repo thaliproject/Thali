@@ -110,29 +110,28 @@ You will notice that there is a link to reviewable in our code reviews. Please u
 ### Javascript (both Node.js and in our demo apps)
 We follow PouchDB on this one, please read their "Guide to Contributions" [here](https://github.com/pouchdb/pouchdb/blob/master/CONTRIBUTING.md#guide-to-contributions)
 
-In our case we will also be using lint, specifically jshint using [.jshintrc](https://github.com/pouchdb/pouchdb/blob/master/.jshintrc)
+In our case we will also be using lint, specifically [JSHint](https://github.com/jshint/jshint)
 
-Note that Intellij/WebStorm has built in support for jshint.
-
-Also note that there is a jquery option for JSHint to include JQuery's globals.
+Note that IntelliJ/WebStorm has built in support for JSHint.
+Also note that there is a jquery option for JSHint to include JQuery's globals. See [documentation](http://jshint.com/docs/options/#jquery) for details.
 
 ### Java
 We will follow the [Google Java Style Guide](http://google.github.io/styleguide/javaguide.html).
 
-[Check Style](https://github.com/checkstyle/checkstyle) provides for automatic enforcement and note that there is a [plugin](https://plugins.jetbrains.com/plugin/1065) for Intellij.
+[Check Style](https://github.com/checkstyle/checkstyle) provides for automatic enforcement and note that there is a [CheckStyle-IDEA plugin](https://plugins.jetbrains.com/plugin/1065) for IntelliJ.
 
 ### Objective-C
-We will follow the [Google Objective-C Style Guide](http://google.github.io/styleguide/objcguide.xml).
+We will follow the [Google Objective-C Style Guide](https://github.com/google/styleguide/blob/gh-pages/objcguide.md).
 
-We will use [Clang Format](http://clang.llvm.org/docs/ClangFormat.html) to handle formatting with the [ClangFormat-Xcode](https://github.com/travisjeffery/ClangFormat-Xcode/) plugin.
+We will use [Clang Format](http://clang.llvm.org/docs/ClangFormat.html) to handle formatting with the [ClangFormat-Xcode plugin](https://github.com/travisjeffery/ClangFormat-Xcode).
 
 ### Swift
 We use [Ray Wenderlich's guidelines](https://github.com/raywenderlich/swift-style-guide), with these amendments:
 
-* Lines are at most 100 characters long
+    * Lines are at most 100 characters long
 
 Also we use [SwiftLint tool](https://github.com/realm/SwiftLint) with some custom rules.
-All rules are listed in .swiftlint.yml file located in Thali_CordovaPlugin/lib/ios/ThaliCore.
+All rules are listed in [.swiftlint.yml](https://github.com/thaliproject/thali-ios/blob/master/.swiftlint.yml) file.
 
 
 ### HTML
