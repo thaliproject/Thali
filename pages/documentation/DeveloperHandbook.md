@@ -87,10 +87,11 @@ That's it. The article will automatically be picked up by our blog feed.
 
 # Process!!!!
 
-# Naming branches in our depots
-Right now we have two primary branches. Master (which is what people should be downloading) and vNext which is our next major release. Typically your branch will have the name `vNext_[your email alias]_[Issue Number]`. So, for example, there is vNext_yarong_417 which is a branch that was created from vNext, by yarong working on issue 417.
+## Naming branches in our depots
+Right now we have one primary branch. `master` (which is what people should be downloading) and vNext which is our next major release.
+To implement a new feature/improvement you typically will have a new branch with the name `master_[your email alias]_[Issue Number]`, where `master` is a target branch for your feature, `[your email alias]` is your current email alias, `[Issue Number]` is number of corresponding issue in GitHub. So, for example, there is master_yarong_417 which is a branch that was created from master, by yarong working on issue #417.
 
-# Code Reviews
+## Code Reviews
 All code MUST be submitted as a PR from a dev's branch to a story branch. No PR can be checked in until it is +1'd by someone who is qualified to do a code review.
 
 A code reviewer upon reviewing a PR is certifying two things:
@@ -104,9 +105,9 @@ In general PRs should be done "silently". A PR gets submitted and someone grabs 
 
 You will notice that there is a link to reviewable in our code reviews. Please use it to do your code reviews.
 
-# Coding guidelines
+## Coding guidelines
 
-## Javascript (both Node.js and in our demo apps)
+### Javascript (both Node.js and in our demo apps)
 We follow PouchDB on this one, please read their "Guide to Contributions" [here](https://github.com/pouchdb/pouchdb/blob/master/CONTRIBUTING.md#guide-to-contributions)
 
 In our case we will also be using lint, specifically jshint using [.jshintrc](https://github.com/pouchdb/pouchdb/blob/master/.jshintrc)
@@ -115,17 +116,17 @@ Note that Intellij/WebStorm has built in support for jshint.
 
 Also note that there is a jquery option for JSHint to include JQuery's globals.
 
-## Java
+### Java
 We will follow the [Google Java Style Guide](http://google.github.io/styleguide/javaguide.html).
 
 [Check Style](https://github.com/checkstyle/checkstyle) provides for automatic enforcement and note that there is a [plugin](https://plugins.jetbrains.com/plugin/1065) for Intellij.
 
-## Objective-C
+### Objective-C
 We will follow the [Google Objective-C Style Guide](http://google.github.io/styleguide/objcguide.xml).
 
 We will use [Clang Format](http://clang.llvm.org/docs/ClangFormat.html) to handle formatting with the [ClangFormat-Xcode](https://github.com/travisjeffery/ClangFormat-Xcode/) plugin.
 
-## Swift
+### Swift
 We use [Ray Wenderlich's guidelines](https://github.com/raywenderlich/swift-style-guide), with these amendments:
 
 * Lines are at most 100 characters long
@@ -134,7 +135,7 @@ Also we use [SwiftLint tool](https://github.com/realm/SwiftLint) with some custo
 All rules are listed in .swiftlint.yml file located in Thali_CordovaPlugin/lib/ios/ThaliCore.
 
 
-## HTML
+### HTML
 
 We don't really have coding guidelines per se in HTML (we don't write enough for it to really be worth it) but all HTML should be validated with [HTML TIDY](http://www.w3.org/People/Raggett/tidy/)
 
