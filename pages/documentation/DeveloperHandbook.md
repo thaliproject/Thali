@@ -4,9 +4,9 @@ layout: page
 sidebar: right
 permalink: "/DeveloperHandbook/"
 categories:
-    - documentation
+- documentation
 header:
-   image_fullwidth: "header.png"
+image_fullwidth: "header.png"
 ---
 
 # Introduction
@@ -14,18 +14,20 @@ header:
 Welcome to Thali! So you want to learn more? Great!
 
 # Checklist for adding a new team member
+
+## General checklist:
 1. Tell them that they need to read this doc and make sure they do what it says in terms of things to sign up for.
 2. Go [here](https://github.com/orgs/thaliproject/people) and add them as a member.
 3. Go [here](https://github.com/thaliproject/thali/blob/gh-pages/pages/info.md) and add them to the "Who?" section.
 4. Send out a mail to the public mailing list about them joining
 5. Add them to our slack channel
 
-For Microsoft employees:
- 1. Add them to the internal OWA Thali group
- 2. Add them to our weekly standup and other random meetings
- 3. Send out a mail to the internal mailing list about them joining
- 4. Harass the new member to go get connected via [https://opensourcehub.microsoft.com/](https://opensourcehub.microsoft.com/)
- 5. Add them to our various private slack channels
+## For Microsoft employees:
+1. Add them to the internal OWA Thali group
+2. Add them to our weekly standup and other random meetings
+3. Send out a mail to the internal mailing list about them joining
+4. Harass the new member to go get connected via [https://opensourcehub.microsoft.com/](https://opensourcehub.microsoft.com/)
+5. Add them to our various private slack channels
 
 # Read!
 The first thing to do is read. Please start [here](/ThaliAndCouch). You can probably skip most of the links except for [this one](/NodeOnDevices) and [this one](/ThaliAndIoT) which will drive all of our immediate work. With these three articles you should have the background you need to understand what we are up to.
@@ -151,11 +153,11 @@ We have a bunch of instructions on how to get this software for Windows, see [se
 NOTE: EVEN IF YOU AREN'T RUNNING ON WINDOWS STILL READ THE [set up for windows](/SetupForWindows) BECAUSE IT CONTAINS IMPORTANT CONFIGURATION INSTRUCTIONS THAT APPLY TO ALL PLATFORMS
 
 # Git
-The [Thali Guide to Git](/ThaliGuideToGit) has a bunch of information about how we use git but anyone who has used git regularly isn't going to find anything new there. First of all you MUST set ignorecase setting to false:  
+The [Thali Guide to Git](/ThaliGuideToGit) has a bunch of information about how we use git but anyone who has used git regularly isn't going to find anything new there. First of all you MUST set ignorecase setting to false:
 
-`git config core.ignorecase false` 
+`git config core.ignorecase false`
 
-You may set it globally: 
+You may set it globally:
 
 `git config --global core.ignorecase false`
 
@@ -290,10 +292,10 @@ To run WiFi only tests on the simulator please go through following steps:
 
 1. First, you need to run the app in the simulator from Xcode, in order to get it installed in the simulator. Make sure you’re running the same simulators you’ll ultimately be using.
 2. Then you have to launch all simulators on macOS. To do this:
-    * Open Terminal and run `cd /Applications/Xcode.app/Contents/Developer/Applications`
-    * Run `open -n Simulator.app`.
-    * Run `open -n Simulator.app` one more time to run another instance of simulator app. You'll get a warning message with text `Unable to boot device in current state: Booted.` Just click `OK`, then goto Hardware -> Device and select device on which you installed Thali app earlier.
-    * If you need more simulators just repeat previous step.
+* Open Terminal and run `cd /Applications/Xcode.app/Contents/Developer/Applications`
+* Run `open -n Simulator.app`.
+* Run `open -n Simulator.app` one more time to run another instance of simulator app. You'll get a warning message with text `Unable to boot device in current state: Booted.` Just click `OK`, then goto Hardware -> Device and select device on which you installed Thali app earlier.
+* If you need more simulators just repeat previous step.
 3. Run Thali application on each simulator you opened.
 4. Goto `test/TestServer` directory in your `Thali_CordovaPlugin` repository.
 5. Run tests like `jx ./index.js "{\"devices\":{\"android\":0,\"ios\":3}}"`
@@ -317,8 +319,8 @@ I wanted to debug the tests in PouchDB as part of a PR. The main problem I ran i
 
 ```Javascript
 /*
- Awful hack for which I will burn in hades for eternity. But it lets me run the pouchdb node.js tests
- */
+Awful hack for which I will burn in hades for eternity. But it lets me run the pouchdb node.js tests
+*/
 var lastIndexOfArgv = process.argv.length - 1;
 process.argv[lastIndexOfArgv] += "test.*.js";
 var globMatchedFiles = glob.sync(process.argv[process.argv.length - 1]);
@@ -343,7 +345,7 @@ We often seem to be running custom version of PouchDB so it's useful to know how
 
 1. Go to where we have cloned our pouchdb repro and run 'npm link' in that directory
 2. Go to the node_modules directory which already contains pouchdb where you want to hook in the custom pouchdb and run 'npm link pouchdb'
- 3. An issue I ran into is permissions because of where I happened to have the code I wanted to link to. Since I'm using windows I had to open a git bash window as an admin and then run 'npm link pouchdb'.
+3. An issue I ran into is permissions because of where I happened to have the code I wanted to link to. Since I'm using windows I had to open a git bash window as an admin and then run 'npm link pouchdb'.
 3. Anytime you refresh (such as with npm install pouchdb-server, in my case) the parent project the link to pouchdb gets lost and has to be re-created.
 
 ## How to get debug statements to output in node.js using IntelliJ
@@ -404,3 +406,4 @@ The downside to jxcore-android-basics is that it ships with the jx core binaries
 3. Get a coffee or a tea, maybe a magazine, that compile takes forever.
 4. Go to jxcore-droid/jni/Android.mk which contains a value JXCORE_OUT_ANDROID that I needed to point to the jxcore/out_android/android/bin/ sub-directory created in step 2.
 5. Now run android-ndk-r10d/ndk-build in the root of the Android project we want to use JXCore in.
+
