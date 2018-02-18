@@ -139,7 +139,7 @@ All rules are listed in [.swiftlint.yml](https://github.com/thaliproject/thali-i
 We don't really have coding guidelines per se in HTML (we don't write enough for it to really be worth it) but all HTML should be validated with [HTML TIDY](http://www.w3.org/People/Raggett/tidy/)
 
 # Dev Machine Set Up
-We need a bunch of software. We use IntelliJ Ultimate Edition although I'm told that the (free) community edition supports what we do just fine. What else you need depends on what platforms you are developing for. At a minimum you need node.js. Most people seem to end up doing some Android work so you need the latest JDK, latest Android SDK, a local maven installation, gradle and a decent android emulator and/or device.
+We need a bunch of software. We use [IntelliJ Ultimate Edition](https://www.jetbrains.com/idea/download/) although I'm told that the (free) [Community Edition](https://www.jetbrains.com/idea/download/) supports what we do just fine. What else you need depends on what platforms you are developing for. At a minimum you need [Node.js](https://nodejs.org/). Most people seem to end up doing some Android work so you need the latest JDK, latest Android SDK, a local [Maven](https://maven.apache.org/) installation, [Gradle](https://gradle.org/) and a decent android emulator and/or device.
 
 We have a bunch of instructions on how to get this software for Windows, see [set up for windows](/SetupForWindows) but we have tested everything on Mac and Linux and it all runs just fine there as well.
 
