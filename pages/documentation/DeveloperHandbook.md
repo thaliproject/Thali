@@ -36,16 +36,16 @@ Next step is to walk through our spec stack. After reading the above the specs t
 
 * [Notification Crypto Design](https://github.com/thaliproject/thali/blob/gh-pages/pages/documentation/PresenceProtocolForOpportunisticSynching.md) - This drives a lot of what we do so understanding it's basic outline is useful
 * [Non-TCP/IP Bindings](https://github.com/thaliproject/thali/blob/gh-pages/pages/documentation/PresenceProtocolBindings.md) - This drives how we actually talk over Android, iOS and WiFi.
-* thaliMobileNative.js - This defines the API that our native code implementations are supposed to expose to JXcore.
-* thaliMobileNativeWrapper.js - This turns the rather raw mobile layer into something easier to deal with, it also implements some of the logic needed for the mobile layer.
-* thaliWifiInfrastructure.js - How we do discovery when we have WiFi available
-* thaliMobile.js - This is a common API to handle both TCP and non-TCP transports
-* wifiBasedNativeMock.js - Defines how to use our WiFi support to create a mock for Thali Native. This lets us test our native functionality on the desktop. We aren't completely committed to this yet.
-* mux - We turn non-TCP transports like Bluetooth or Multi-Peer Connectivity Framework into a single TCP connection but we need to run multiple simultaneous TCP connections over that single connection. The files in this directory handle that logic.
-* notification - As described in the crypto documents we both send out notifications of people we want to talk to as well as process incoming notifications. This directory contains the logic to handle that.
-* replication - This handles telling the notification layer when to send out notifications based on changes in the local DB. It also handles incoming notifications that someone wants to replicate with us.
-* security - Various security related stuff
-* thaliPeerPool - This is the central controller which receives requests to use the local nework connectivity and decides which ones will get through.
+* [thaliMobileNative.js](https://github.com/thaliproject/Thali_CordovaPlugin/blob/master/thali/NextGeneration/thaliMobileNative.js) - This defines the API that our native code implementations are supposed to expose to JXcore.
+* [thaliMobileNativeWrapper.js](https://github.com/thaliproject/Thali_CordovaPlugin/blob/master/thali/NextGeneration/thaliMobileNativeWrapper.js) - This turns the rather raw mobile layer into something easier to deal with, it also implements some of the logic needed for the mobile layer.
+* [thaliWifiInfrastructure.js](https://github.com/thaliproject/Thali_CordovaPlugin/blob/master/thali/NextGeneration/thaliWifiInfrastructure.js) - How we do discovery when we have WiFi available
+* [thaliMobile.js](https://github.com/thaliproject/Thali_CordovaPlugin/blob/master/thali/NextGeneration/thaliMobile.js) - This is a common API to handle both TCP and non-TCP transports
+* [wifiBasedNativeMock.js](https://github.com/thaliproject/Thali_CordovaPlugin/blob/master/test/www/jxcore/lib/wifiBasedNativeMock.js) - Defines how to use our WiFi support to create a mock for Thali Native. This lets us test our native functionality on the desktop. We aren't completely committed to this yet.
+* [mux](https://github.com/thaliproject/Thali_CordovaPlugin/tree/master/thali/NextGeneration/mux) - We turn non-TCP transports like Bluetooth or Multi-Peer Connectivity Framework into a single TCP connection but we need to run multiple simultaneous TCP connections over that single connection. The files in this directory handle that logic.
+* [notification](https://github.com/thaliproject/Thali_CordovaPlugin/tree/master/thali/NextGeneration/notification) - As described in the crypto documents we both send out notifications of people we want to talk to as well as process incoming notifications. This directory contains the logic to handle that.
+* [replication](https://github.com/thaliproject/Thali_CordovaPlugin/tree/master/thali/NextGeneration/replication) - This handles telling the notification layer when to send out notifications based on changes in the local DB. It also handles incoming notifications that someone wants to replicate with us.
+* [security](https://github.com/thaliproject/Thali_CordovaPlugin/tree/master/thali/NextGeneration/security) - Various security related stuff
+* [thaliPeerPool](https://github.com/thaliproject/Thali_CordovaPlugin/tree/master/thali/NextGeneration/thaliPeerPool) - This is the central controller which receives requests to use the local nework connectivity and decides which ones will get through.
 
 With the exception of the first two all the other docs are JSDoc and so you can generate them locally by cloning Thali_CordovaPlugin, switching to vNext and then running `jx npm run createInternalDocs`. This will create an "out" directory which contains an index.html which has all the docs.
 
@@ -406,4 +406,3 @@ The downside to jxcore-android-basics is that it ships with the jx core binaries
 3. Get a coffee or a tea, maybe a magazine, that compile takes forever.
 4. Go to jxcore-droid/jni/Android.mk which contains a value JXCORE_OUT_ANDROID that I needed to point to the jxcore/out_android/android/bin/ sub-directory created in step 2.
 5. Now run android-ndk-r10d/ndk-build in the root of the Android project we want to use JXCore in.
-
