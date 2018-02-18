@@ -51,15 +51,17 @@ With the exception of the first two all the other docs are JSDoc and so you can 
 
 At this time our repo's are:
 
-* https://github.com/thaliproject/thali - This is our website
-* https://github.com/thaliproject/Thali_CordovaPlugin - This is our main project
-* https://github.com/thaliproject/Thali_CordovaPlugin_BtLibrary - The Java code for Android
-* https://github.com/thaliproject/postcardapp - Our sample app
-* https://github.com/thaliproject/scan_node_modules - A utility to help us figure out what we are bringing in through NPM so we can hack it down
-* https://github.com/thaliproject/CI - The source code for our continuous integration environment.
-* https://github.com/thaliproject/salti-admin - Secures a node.js interface over PouchDB Express intended to be called by the WebView from Cordova.
-* https://github.com/thaliproject/salti - Secures the external facing PouchDB Express server
-* https://github.com/thaliproject/jxbuild - Instructions for building our customer release of JXcore along with pointers to our custom binaries
+* [https://github.com/thaliproject/thali](https://github.com/thaliproject/thali) - This is our website
+* [https://github.com/thaliproject/Thali_CordovaPlugin](https://github.com/thaliproject/Thali_CordovaPlugin) - This is our main project
+* [https://github.com/thaliproject/Thali_CordovaPlugin_BtLibrary](https://github.com/thaliproject/Thali_CordovaPlugin_BtLibrary) - The Java code for Android
+* [https://github.com/thaliproject/thali-ios](https://github.com/thaliproject/thali-ios) - The Swift code for iOS
+* [https://github.com/thaliproject/swift-corelibs-xctest](https://github.com/thaliproject/swift-corelibs-xctest) - Fork of XCTest project by Apple
+* [https://github.com/thaliproject/postcardapp](https://github.com/thaliproject/postcardapp) - Our sample app
+* [https://github.com/thaliproject/scan_node_modules](https://github.com/thaliproject/scan_node_modules) - A utility to help us figure out what we are bringing in through NPM so we can hack it down
+* [https://github.com/thaliproject/CI](https://github.com/thaliproject/CI) - The source code for our continuous integration environment.
+* [https://github.com/thaliproject/salti-admin](https://github.com/thaliproject/salti-admin) - Secures a node.js interface over PouchDB Express intended to be called by the WebView from Cordova.
+* [https://github.com/thaliproject/salti](https://github.com/thaliproject/salti) - Secures the external facing PouchDB Express server
+* [https://github.com/thaliproject/jxbuild](https://github.com/thaliproject/jxbuild) - Instructions for building our customer release of JXcore along with pointers to our custom binaries
 
 # Sign up to follow us
 Please go [here](/WaysToContribute) and subscribe to our blog, to our mailing list, follow us on Twitter, bookmark our backlog webpage, etc. Also make sure you hit 'watch' on all the projects listed above.
@@ -406,3 +408,4 @@ The downside to jxcore-android-basics is that it ships with the jx core binaries
 3. Get a coffee or a tea, maybe a magazine, that compile takes forever.
 4. Go to jxcore-droid/jni/Android.mk which contains a value JXCORE_OUT_ANDROID that I needed to point to the jxcore/out_android/android/bin/ sub-directory created in step 2.
 5. Now run android-ndk-r10d/ndk-build in the root of the Android project we want to use JXCore in.
+
