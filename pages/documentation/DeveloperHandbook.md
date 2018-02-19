@@ -4,9 +4,9 @@ layout: page
 sidebar: right
 permalink: "/DeveloperHandbook/"
 categories:
-- documentation
+    - documentation
 header:
-image_fullwidth: "header.png"
+    image_fullwidth: "header.png"
 ---
 
 # Introduction
