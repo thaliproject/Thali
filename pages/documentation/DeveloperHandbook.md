@@ -6,7 +6,7 @@ permalink: "/DeveloperHandbook/"
 categories:
     - documentation
 header:
-    image_fullwidth: "header.png"
+   image_fullwidth: "header.png"
 ---
 
 # Introduction
