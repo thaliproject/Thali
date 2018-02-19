@@ -47,7 +47,7 @@ Next step is to walk through our spec stack. After reading the above the specs t
 * [security](https://github.com/thaliproject/Thali_CordovaPlugin/tree/master/thali/NextGeneration/security) - Various security related stuff
 * [thaliPeerPool](https://github.com/thaliproject/Thali_CordovaPlugin/tree/master/thali/NextGeneration/thaliPeerPool) - This is the central controller which receives requests to use the local nework connectivity and decides which ones will get through.
 
-With the exception of the first two all the other docs are JSDoc and so you can generate them locally by cloning Thali_CordovaPlugin, switching to vNext and then running `jx npm run createInternalDocs`. This will create an "out" directory which contains an index.html which has all the docs.
+With the exception of the first two all the other docs are JSDoc and so you can generate them locally by cloning Thali_CordovaPlugin, switching to `master` branch and then running `jx npm run createInternalDocs`. This will create an "out" directory which contains an index.html which has all the docs.
 
 At this time our repo's are:
 
